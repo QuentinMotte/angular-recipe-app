@@ -2,17 +2,17 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggler " (click)="collapsed = !collapsed">
-          <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
       </button>
       <a href="/" class="navbar-brand">Recipe Book</a>
     </div>
     <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Recipes</a>
+          <a class="nav-link active" (click)="onSelect('recipe')" href="#">Recipes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Shopping List</a>
+          <a class="nav-link" (click)="onSelect('shopping-list')" href="#">Shopping List</a>
         </li>
       </ul>
       <ul class="navbar-nav">
