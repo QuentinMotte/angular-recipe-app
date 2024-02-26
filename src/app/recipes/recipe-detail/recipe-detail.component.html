@@ -16,13 +16,16 @@
 <div class="row">
   <div class="col-xs-12">
     <div class="dropdown">
-      <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <button class="btn btn-primary dropdown-toggle " type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
         Manage Recipe
       </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">To Shopping List</a></li>
-        <li><a class="dropdown-item" href="#">Edit Recipe</a></li>
-        <li><a class="dropdown-item" href="#">Delete Recipe</a></li>
+      <ul class="dropdown-menu ">
+        <li><a tabindex="0" style="cursor: pointer" (click)="onAddToShoppingList()"
+               (keyup.enter)="onAddToShoppingList()"
+               class="dropdown-item">To Shopping List</a></li>
+        <li><a tabindex="0" class="dropdown-item" href="#">Edit Recipe</a></li>
+        <li><a tabindex="0" class="dropdown-item" href="#">Delete Recipe</a></li>
       </ul>
     </div>
   </div>
@@ -34,6 +37,12 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-    Ingredients
+    <ul class="list-group">
+      @for (ingredient of selectedRecipe.ingredients; track $index) {
+        <li class="list-group-item">
+          {{ ingredient.name }} - {{ ingredient.amount }}
+        </li>
+      }
+    </ul>
   </div>
 </div>
