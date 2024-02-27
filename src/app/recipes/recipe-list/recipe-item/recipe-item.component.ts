@@ -1,13 +1,14 @@
 import {Component, Input} from '@angular/core';
 import {Recipe} from "../../recipe.model";
-import {RouterLink} from "@angular/router";
+import {RouterLink, RouterLinkActive} from "@angular/router";
 
 @Component({
   standalone: true,
   selector: 'app-recipe-item',
   templateUrl: './recipe-item.component.html',
   imports: [
-    RouterLink
+    RouterLink,
+    RouterLinkActive
   ],
   styleUrl: './recipe-item.component.css'
 })
