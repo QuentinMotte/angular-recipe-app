@@ -1,17 +1,18 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component} from '@angular/core';
+import {RouterLink, RouterLinkActive} from "@angular/router";
 
 @Component({
   standalone: true,
   selector: 'app-header',
   templateUrl: './header.component.html',
+  imports: [
+    RouterLink,
+    RouterLinkActive
+  ],
 
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  @Output() featureSelected = new EventEmitter<string>();
   collapsed = false;
 
-  onSelect(feature: string) {
-    this.featureSelected.emit(feature);
-  }
 }
